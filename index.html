@@ -242,6 +242,84 @@
             
 
   
+    <article id="post-数组：盛最多水的容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/bip-wenjie.github.io/2021/03/23/%E6%95%B0%E7%BB%84%EF%BC%9A%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" target="_blank">数组：1比特与2比特字符</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/bip-wenjie.github.io/2021/03/23/%E6%95%B0%E7%BB%84%EF%BC%9A%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" class="archive-article-date">
+        <time datetime="2021-03-23T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-23</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><ul>
+<li>给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</li>
+</ul>
+<p>说明：你不能倾斜容器。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//定义两个指针，分别指向数组头部和尾部</span></span><br><span class="line">		<span class="keyword">int</span> first = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> last = height.length - <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//容器的初始面积</span></span><br><span class="line">		<span class="keyword">int</span> area = (height[last] &gt; height[first]?height[first] : height[last]) * (last - first);</span><br><span class="line">		<span class="comment">//声明一个临时容器储存面积的值</span></span><br><span class="line">		<span class="keyword">int</span> areaTemp;</span><br><span class="line">		<span class="comment">//循环，头指针还小于尾指针的时候进入</span></span><br><span class="line">		<span class="keyword">while</span>(first &lt; last) &#123;</span><br><span class="line">			<span class="comment">//通过移动指针位置，计算面积，找出最大的容器面积</span></span><br><span class="line">			<span class="comment">//因为是按最低的高度计算面积，所以</span></span><br><span class="line">			<span class="comment">//若移动值大的指针，面积一定缩小，所以移动值较小的指针</span></span><br><span class="line">			<span class="keyword">if</span>(height[first] &gt; height[last]) &#123;</span><br><span class="line">				</span><br><span class="line">				areaTemp = height[last] * (last - first);</span><br><span class="line">				<span class="keyword">if</span>(area &lt; areaTemp) &#123;</span><br><span class="line">					area = areaTemp;</span><br><span class="line">				&#125;</span><br><span class="line">				last--;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				areaTemp = height[first] * (last - first);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span>(area &lt; areaTemp) &#123;</span><br><span class="line">					area = areaTemp;</span><br><span class="line">				&#125;</span><br><span class="line">				first++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> area;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/bip-wenjie.github.io/2021/03/23/%E6%95%B0%E7%BB%84%EF%BC%9A%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数组：三数之和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

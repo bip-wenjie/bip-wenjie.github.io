@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>数组：三数之和 - 袁某人的博客</title>
+  <title>数组：三数之和 - 袁文杰的博客</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
@@ -68,8 +68,8 @@
       },
       donate: {
         enable: true,
-        alipay: 'https://pic.izhaoo.com/alipay.jpg',
-        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+        alipay: 'https://www.bip.cool/images/theme/alipay.jpg',
+        wechat: 'https://www.bip.cool/images/theme/weixin.png'
       },
       galleries: {
         enable: true
@@ -160,9 +160,7 @@
       </li><li class="menu-item">
         <a href="/archives/ " class="underline "> 归档</a>
       </li><li class="menu-item">
-        <a href="/tags/ " class="underline "> 标签</a>
-      </li><li class="menu-item">
-        <a href="/categories/ " class="underline "> 分类</a>
+        <a href="/tags/suibi/ " class="underline "> 随笔</a>
       </li><li class="menu-item">
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
@@ -210,7 +208,7 @@
         
           <section class="donate">
   <div id="qrcode-donate">
-    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+    <img   class="lazyload" data-original="https://www.bip.cool/images/theme/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
   </div>
   <div class="icon">
     <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
@@ -226,6 +224,37 @@
   </nav>
 
       </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk" class="gitalk"></div>
+<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  window.onload = function () {
+    var gitalk = new Gitalk({
+      clientID: '6dc0b923014c40721e713b1a1e0c883e399a5051339a26cbbf80b7b366932a58',
+      clientSecret: 'e091be8612c46106847ce41a901b21f694a84f93bb1f5d410ae5cc3cce90dc76',
+      id: window.location.pathname,
+      repo: 'https://gitee.com/yuanbind/pinglun.git',
+      owner: 'www.bip.cool',
+      admin: 'yuanbind'
+    });
+    if ( true ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        gitalk.render('gitalk');
+      });
+    } else {
+      gitalk.render('gitalk');
+    }
+  }
+</script>
+
+</section>
       
     </section>
   </div>

@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="题目：在1954年IBM的Hans Luhn提出一种算法，改算法可以验证信用卡号的合法性。这个算法在确定输入的卡号是否正确，或者这张信用卡是否被扫描仪正确扫描方面是非常有用的。遵循这个合法性检测，可以生成所有的信用卡号，通常称之为Luhn检测或Mod 10检测，可以如下描述（为了方便解释，假设卡号为4388576018402626）     从右到左对每个偶数位字翻倍。如果对某个数字翻倍之后的结果">
+  <meta name="description" content="题目：在1954年IBM的Hans Luhn提出一种算法，改算法可以验证信用卡号的合法性。这个算法在确定输入的卡号是否正确，或者这张信用卡是否被扫描仪正确扫描方面是非常有用的。遵循这个合法性检测，可以生成所有的信用卡号，通常称之为Luhn检测或Mod 10检测，可以如下描述（为了方便解释，假设卡号为4388576018402626）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="课堂小实验：验证卡号的合法性">
 <meta property="og:url" content="https://bip-wenjie.github.io/2021/03/25/%E8%AF%BE%E5%A0%82%E5%B0%8F%E5%AE%9E%E9%AA%8C%EF%BC%9A%E9%AA%8C%E8%AF%81%E5%8D%A1%E5%8F%B7%E7%9A%84%E5%90%88%E6%B3%95%E6%80%A7/index.html">
 <meta property="og:site_name" content="袁文杰的博客">
-<meta property="og:description" content="题目：在1954年IBM的Hans Luhn提出一种算法，改算法可以验证信用卡号的合法性。这个算法在确定输入的卡号是否正确，或者这张信用卡是否被扫描仪正确扫描方面是非常有用的。遵循这个合法性检测，可以生成所有的信用卡号，通常称之为Luhn检测或Mod 10检测，可以如下描述（为了方便解释，假设卡号为4388576018402626）     从右到左对每个偶数位字翻倍。如果对某个数字翻倍之后的结果">
+<meta property="og:description" content="题目：在1954年IBM的Hans Luhn提出一种算法，改算法可以验证信用卡号的合法性。这个算法在确定输入的卡号是否正确，或者这张信用卡是否被扫描仪正确扫描方面是非常有用的。遵循这个合法性检测，可以生成所有的信用卡号，通常称之为Luhn检测或Mod 10检测，可以如下描述（为了方便解释，假设卡号为4388576018402626）">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-25T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-25T08:30:42.723Z">
+<meta property="article:modified_time" content="2021-03-29T05:14:17.811Z">
 <meta property="article:author" content="袁文杰">
 <meta name="twitter:card" content="summary">
   
@@ -292,7 +292,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>在1954年IBM的Hans Luhn提出一种算法，改算法可以验证信用卡号的合法性。这个算法在确定输入的卡号是否正确，或者这张信用卡是否被扫描仪正确扫描方面是非常有用的。遵循这个合法性检测，可以生成所有的信用卡号，通常称之为Luhn检测或Mod 10检测，可以如下描述（为了方便解释，假设卡号为4388576018402626）</p>
+    <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>在1954年IBM的Hans Luhn提出一种算法，改算法可以验证信用卡号的合法性。这个算法在确定输入的卡号是否正确，或者这张信用卡是否被扫描仪正确扫描方面是非常有用的。遵循这个合法性检测，可以生成所有的信用卡号，通常称之为Luhn检测或Mod 10检测，可以如下描述（为了方便解释，假设卡号为4388576018402626）<span id="more"></span></p>
 <ol>
 <li>   从右到左对每个偶数位字翻倍。如果对某个数字翻倍之后的结果是一个两位数，那么就将这个两位加在一起得到一位数。<br>2 * 2 = 4<br>2 * 2 = 4<br>4 * 2 = 8<br>1 * 2 = 2<br>6 * 2 = 12 (1 + 2 = 3)<br>5 * 2 = 10 (1 + 0 = 1)<br>8 * 2 = 16 (1 + 6 = 7)<br>4 * 2 = 8</li>
 <li>   现在将第一步得到的所有一位数相加。<br>4 + 4 + 8 + 2 + 3 + 1 + 7 + 8 = 37</li>

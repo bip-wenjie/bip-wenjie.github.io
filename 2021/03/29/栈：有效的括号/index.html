@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://bip-wenjie.github.io">
-  <title>袁文杰的博客</title>
+  <title>栈：有效的括号 | 袁文杰的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="袁文杰的博客">
-<meta property="og:url" content="https://bip-wenjie.github.io/page/2/index.html">
+  <meta name="description" content="题目：给定一个只包括 &#39;(&#39;，&#39;)&#39;，&#39;&amp;#123;&#39;，&#39;&amp;#125;&#39;，&#39;[&#39;，&#39;]&#39; 的字符串 s ，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1： 输入：s &#x3D; “()”输出：true示例 2： 输入：s &#x3D; “()[]{}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈：有效的括号">
+<meta property="og:url" content="https://bip-wenjie.github.io/2021/03/29/%E6%A0%88%EF%BC%9A%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/index.html">
 <meta property="og:site_name" content="袁文杰的博客">
+<meta property="og:description" content="题目：给定一个只包括 &#39;(&#39;，&#39;)&#39;，&#39;&amp;#123;&#39;，&#39;&amp;#125;&#39;，&#39;[&#39;，&#39;]&#39; 的字符串 s ，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1： 输入：s &#x3D; “()”输出：true示例 2： 输入：s &#x3D; “()[]{}">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-29T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-29T04:59:19.630Z">
 <meta property="article:author" content="袁文杰">
 <meta name="twitter:card" content="summary">
   
@@ -239,48 +239,135 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-数组：寻找两个正序数组的中位数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-栈：有效的括号" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/bip-wenjie.github.io/2021/03/20/%E6%95%B0%E7%BB%84%EF%BC%9A%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" target="_blank">数组：寻找两个正序数组的中位数</a>
-  
+    <h1 class="article-title" itemprop="name">
+      栈：有效的括号
     </h1>
   
 
 
   
   
-<a href="/bip-wenjie.github.io/2021/03/20/%E6%95%B0%E7%BB%84%EF%BC%9A%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="archive-article-date">
-        <time datetime="2021-03-20T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/bip-wenjie.github.io/2021/03/29/%E6%A0%88%EF%BC%9A%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="archive-article-date">
+        <time datetime="2021-03-29T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-29</time>
 </a>
 
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">499字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><ul>
-<li>给定两个大小分别为 m 和 n 的正序（从小到大）数组     nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。</li>
+    <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><pre><code>给定一个只包括 &#39;(&#39;，&#39;)&#39;，&#39;&#123;&#39;，&#39;&#125;&#39;，&#39;[&#39;，&#39;]&#39; 的字符串 s ，判断字符串是否有效。
+有效字符串需满足：
+左括号必须用相同类型的右括号闭合。
+左括号必须以正确的顺序闭合。
+</code></pre>
+<p>示例 1：</p>
+<p>输入：s = “()”<br>输出：true<br>示例 2：</p>
+<p>输入：s = “()[]{}”<br>输出：true<br>示例 3：</p>
+<p>输入：s = “(]”<br>输出：false<br>示例 4：</p>
+<p>输入：s = “([)]”<br>输出：false<br>示例 5：</p>
+<p>输入：s = “{[]}”<br>输出：true</p>
+<ul>
+<li>刚学完栈的我，一顿操作，自以为很nice。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] num1, <span class="keyword">int</span>[] num2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//存放最后结果</span></span><br><span class="line">        <span class="keyword">double</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//新建一个数组存放num1和num2合并后的数组</span></span><br><span class="line">		<span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span>[num1.length + num2.length];</span><br><span class="line">        <span class="comment">//合并num1、num2至arr[]</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num1.length; i++) &#123;</span><br><span class="line">			arr[i] = num1[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = num1.length;j &lt; arr.length;j++) &#123;</span><br><span class="line">			arr[j] = num2[j - num1.length];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//对合并后的数组进行排序（快速排序）</span></span><br><span class="line">		Arrays.sort(arr);</span><br><span class="line">        <span class="comment">//判断arr数组长度</span></span><br><span class="line">        <span class="comment">//①arr长度小于2</span></span><br><span class="line">		<span class="keyword">if</span>(arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">			res = arr[arr.length - <span class="number">1</span>];</span><br><span class="line">            <span class="comment">//arr数组长度为偶数</span></span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr.length % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">			res = (arr[arr.length / <span class="number">2</span>] + arr[arr.length/<span class="number">2</span> - <span class="number">1</span>])/<span class="number">2.0</span>;</span><br><span class="line">            <span class="comment">//arr数组长度为奇数</span></span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			res = arr[arr.length/<span class="number">2</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建括号之间的映射</span></span><br><span class="line">		Map&lt;String,String&gt; map = <span class="keyword">new</span> HashMap();</span><br><span class="line">		map.put(<span class="string">&quot;)&quot;</span>,<span class="string">&quot;(&quot;</span>);</span><br><span class="line">		map.put(<span class="string">&quot;]&quot;</span>,<span class="string">&quot;[&quot;</span>);</span><br><span class="line">		map.put(<span class="string">&quot;&#125;&quot;</span>,<span class="string">&quot;&#123;&quot;</span>);</span><br><span class="line">		<span class="comment">//创建一个栈</span></span><br><span class="line">		Stack&lt;String&gt; stack = <span class="keyword">new</span> Stack&lt;String&gt;();</span><br><span class="line">		<span class="comment">//指向字符串第一个字符的指针</span></span><br><span class="line">		<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">//储存结果</span></span><br><span class="line">		<span class="keyword">boolean</span> res = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="comment">//扫描字符串，如果遇到左括号，直接入栈</span></span><br><span class="line">			String temp = s.substring(index, index + <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span>(isLeft(temp)) &#123;</span><br><span class="line">				stack.push(temp);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">//如果是右括号，判断栈顶</span></span><br><span class="line">				<span class="comment">//如果栈为空，直接返回false，如果栈不为空判断栈顶是否为其对应的左括号</span></span><br><span class="line">				<span class="comment">//如果是，则消去一对括号</span></span><br><span class="line">				<span class="keyword">if</span>(stack.empty()) &#123;</span><br><span class="line">					res = <span class="keyword">false</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> <span class="keyword">if</span>(stack.peek().equals(map.get(temp))) &#123;</span><br><span class="line">					stack.pop();</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="comment">//如果不是其对应的左括号，直接返回false</span></span><br><span class="line">					res = <span class="keyword">false</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			index++;</span><br><span class="line">			<span class="comment">//当index等于s长度时，扫描完毕</span></span><br><span class="line">			<span class="keyword">if</span>(index &gt;= s.length()) &#123;</span><br><span class="line">				<span class="comment">//判断栈是否为空，如果为空，返回true，否则为false</span></span><br><span class="line">				<span class="keyword">if</span>(stack.empty()) &#123;</span><br><span class="line">					res = <span class="keyword">true</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					res = <span class="keyword">false</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isLeft</span><span class="params">(String string)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;(&quot;</span>.equals(string) || <span class="string">&quot;[&quot;</span>.equals(string) || <span class="string">&quot;&#123;&quot;</span>.equals(string);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-
+<ul>
+<li>打开评论，看到大佬的代码，我的脑子呢？？</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        Stack&lt;Character&gt;stack = <span class="keyword">new</span> Stack&lt;Character&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c: s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span>(c==<span class="string">&#x27;(&#x27;</span>) stack.push(<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;[&#x27;</span>) stack.push(<span class="string">&#x27;]&#x27;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;&#123;&#x27;</span>) stack.push(<span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(stack.isEmpty()||c!=stack.pop()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
     
 
     
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/bip-wenjie.github.io/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/bip-wenjie.github.io/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          袁文杰
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://bip-wenjie.github.io/bip-wenjie.github.io/2021/03/29/栈：有效的括号/" title="栈：有效的括号" target="_blank">https://bip-wenjie.github.io/bip-wenjie.github.io/2021/03/29/栈：有效的括号/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -290,16 +377,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/bip-wenjie.github.io/2021/03/20/%E6%95%B0%E7%BB%84%EF%BC%9A%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://bip-wenjie.github.io/2021/03/29/%E6%A0%88%EF%BC%9A%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/bip-wenjie.github.io/2021/03/28/%E6%A0%88%EF%BC%9A%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">栈：中缀表达式转后缀表达式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -320,97 +467,14 @@
 
 
 
-  
-    <article id="post-创建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/bip-wenjie.github.io/2021/03/19/%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank">创建个人博客</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/bip-wenjie.github.io/2021/03/19/%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-        <time datetime="2021-03-19T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="1-Node-js下载"><a href="#1-Node-js下载" class="headerlink" title="1. Node.js下载"></a>1. Node.js下载</h4><ul>
-<li><p>地址 ： <code>nodejs.org</code></p>
-</li>
-<li><p>安装，全部next!</p>
-</li>
-<li><p>验证：win + R ==&gt; cmd 进入命令行 </p>
-<p>  <code>node -v</code><br>  <code>npm -v</code><br>显示版本号则成功</p>
-</li>
-<li><p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code><br>验证：
-    
-    <a class="article-more-a" href="/bip-wenjie.github.io/2021/03/19/%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/bip-wenjie.github.io/2021/03/19/%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/bip-wenjie.github.io/">&amp;laquo; Prev</a><a class="page-number" href="/bip-wenjie.github.io/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+
+
+
+
 
 
           </div>
@@ -450,8 +514,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://bip-wenjie.github.io">
-  <title>Archives | 袁文杰的博客</title>
+  <title>查找：二分查找 | 袁文杰的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="袁文杰的博客">
-<meta property="og:url" content="https://bip-wenjie.github.io/archives/index.html">
+  <meta name="description" content="学习查找算法，看思路自己写了两种方式，二分查找应该是比较简单的，没什么好说的。  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869	&#x2F;&#x2F;二分查找非递归实现&#x2F;&#x2F;	public static">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查找：二分查找">
+<meta property="og:url" content="https://bip-wenjie.github.io/2021/03/31/%E6%9F%A5%E6%89%BE%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.html">
 <meta property="og:site_name" content="袁文杰的博客">
+<meta property="og:description" content="学习查找算法，看思路自己写了两种方式，二分查找应该是比较简单的，没什么好说的。  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869	&#x2F;&#x2F;二分查找非递归实现&#x2F;&#x2F;	public static">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-31T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-31T07:03:26.949Z">
 <meta property="article:author" content="袁文杰">
 <meta name="twitter:card" content="summary">
   
@@ -235,314 +239,226 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-查找：二分查找" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/bip-wenjie.github.io/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      查找：二分查找
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/bip-wenjie.github.io/2021/03/31/%E6%9F%A5%E6%89%BE%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="archive-article-date">
         <time datetime="2021-03-31T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">326字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ul>
+<li>学习查找算法，看思路自己写了两种方式，二分查找应该是比较简单的，没什么好说的。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//二分查找非递归实现</span></span><br><span class="line"><span class="comment">//	public static int binarySearchimpl(int arr[],int target) &#123;</span></span><br><span class="line"><span class="comment">//		//确定目标数组中间下标</span></span><br><span class="line"><span class="comment">//		int left = 0;</span></span><br><span class="line"><span class="comment">//		int right = arr.length - 1;</span></span><br><span class="line"><span class="comment">//		int mid = (left + right) / 2;</span></span><br><span class="line"><span class="comment">//		while(left &lt;= right) &#123;</span></span><br><span class="line"><span class="comment">//			if(target &gt; arr[mid]) &#123;</span></span><br><span class="line"><span class="comment">//				left = mid;</span></span><br><span class="line"><span class="comment">//			&#125;else if(target &lt; arr[mid]) &#123;</span></span><br><span class="line"><span class="comment">//				right = mid;</span></span><br><span class="line"><span class="comment">//			&#125;else if(target == arr[mid]) &#123;</span></span><br><span class="line"><span class="comment">//				return mid;</span></span><br><span class="line"><span class="comment">//			&#125;</span></span><br><span class="line"><span class="comment">//			mid = (left + right) / 2;</span></span><br><span class="line"><span class="comment">//			</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"><span class="comment">//		return -1;</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line">	<span class="comment">//二分查找递归实现</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearchimpl</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> left,<span class="keyword">int</span> right,<span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(left &gt; right) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;找不到该数&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(target == arr[mid]) &#123;</span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(target &gt; arr[mid]) &#123;</span><br><span class="line">				left = mid;</span><br><span class="line">				<span class="keyword">return</span> binarySearchimpl(arr,left,right,target);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				right = mid;</span><br><span class="line">				<span class="keyword">return</span> binarySearchimpl(arr,left,right,target);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//如果有多个相等target</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">binarySearchimpl</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//确定目标数组中间下标</span></span><br><span class="line">		List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">		<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> right = arr.length - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">while</span>(left &lt;= right) &#123;</span><br><span class="line">			<span class="keyword">if</span>(target &gt; arr[mid]) &#123;</span><br><span class="line">				left = mid;</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(target &lt; arr[mid]) &#123;</span><br><span class="line">				right = mid;</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(target == arr[mid]) &#123;</span><br><span class="line">				<span class="keyword">int</span> temp = mid - <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">do</span> &#123;</span><br><span class="line">					list.add(mid);</span><br><span class="line">					mid++;</span><br><span class="line">				&#125; <span class="keyword">while</span> (target == arr[mid]);</span><br><span class="line">				<span class="keyword">while</span> (target == arr[temp]) &#123;</span><br><span class="line">					list.add(temp);</span><br><span class="line">					temp--;</span><br><span class="line">					<span class="keyword">if</span>(temp &lt; <span class="number">0</span>) &#123;</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">return</span> list;</span><br><span class="line">			&#125;</span><br><span class="line">			mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/bip-wenjie.github.io/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/bip-wenjie.github.io/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/31/%E6%9F%A5%E6%89%BE%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" target="_blank">查找：二分查找</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
-
-        <div class="article-info info-on-right">
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          袁文杰
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://bip-wenjie.github.io/bip-wenjie.github.io/2021/03/31/查找：二分查找/" title="查找：二分查找" target="_blank">https://bip-wenjie.github.io/bip-wenjie.github.io/2021/03/31/查找：二分查找/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://bip-wenjie.github.io/2021/03/31/%E6%9F%A5%E6%89%BE%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/30/%E6%A0%88%EF%BC%9A%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/" class="archive-article-date">
-        <time datetime="2021-03-30T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/bip-wenjie.github.io/2021/03/30/%E6%A0%88%EF%BC%9A%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">栈：简化路径</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/30/%E6%A0%88%EF%BC%9A%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/" target="_blank">栈：简化路径</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/29/%E6%A0%88%EF%BC%9A%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="archive-article-date">
-        <time datetime="2021-03-29T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-29</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/29/%E6%A0%88%EF%BC%9A%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" target="_blank">栈：有效的括号</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/29/%E6%A0%88%EF%BC%9A%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="archive-article-date">
-        <time datetime="2021-03-29T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-29</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/29/%E6%A0%88%EF%BC%9A%E6%8E%A5%E9%9B%A8%E6%B0%B4/" target="_blank">栈：接雨水</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/28/%E6%A0%88%EF%BC%9A%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-        <time datetime="2021-03-28T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-28</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/28/%E6%A0%88%EF%BC%9A%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_blank">栈：中缀表达式转后缀表达式</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/27/%E6%A0%88%EF%BC%9A%E5%A4%9A%E4%BD%8D%E6%95%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E8%AE%A1%E7%AE%97/" class="archive-article-date">
-        <time datetime="2021-03-27T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/27/%E6%A0%88%EF%BC%9A%E5%A4%9A%E4%BD%8D%E6%95%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E8%AE%A1%E7%AE%97/" target="_blank">栈：多位数加减乘除计算</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/26/%E6%A0%88%EF%BC%9A%E4%B8%AA%E4%BD%8D%E6%95%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E8%AE%A1%E7%AE%97%E5%99%A8/" class="archive-article-date">
-        <time datetime="2021-03-26T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-26</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/26/%E6%A0%88%EF%BC%9A%E4%B8%AA%E4%BD%8D%E6%95%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E8%AE%A1%E7%AE%97%E5%99%A8/" target="_blank">栈：个位数加减乘除计算器</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/25/%E6%95%B0%E7%BB%84%EF%BC%9A%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" class="archive-article-date">
-        <time datetime="2021-03-25T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/25/%E6%95%B0%E7%BB%84%EF%BC%9A%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" target="_blank">数组：删除有序数组中的重复项</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/bip-wenjie.github.io/2021/03/25/%E8%AF%BE%E5%A0%82%E5%B0%8F%E5%AE%9E%E9%AA%8C%EF%BC%9A%E9%AA%8C%E8%AF%81%E5%8D%A1%E5%8F%B7%E7%9A%84%E5%90%88%E6%B3%95%E6%80%A7/" class="archive-article-date">
-        <time datetime="2021-03-25T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/bip-wenjie.github.io/2021/03/25/%E8%AF%BE%E5%A0%82%E5%B0%8F%E5%AE%9E%E9%AA%8C%EF%BC%9A%E9%AA%8C%E8%AF%81%E5%8D%A1%E5%8F%B7%E7%9A%84%E5%90%88%E6%B3%95%E6%80%A7/" target="_blank">课堂小实验：验证卡号的合法性</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/bip-wenjie.github.io/archives/page/2/">2</a><a class="extend next" rel="next" href="/bip-wenjie.github.io/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -583,8 +499,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

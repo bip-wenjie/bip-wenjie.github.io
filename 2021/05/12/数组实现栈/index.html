@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+  <meta name="description" content="&#x2F;**  * @author: yuanwenjie  * @date: 2021&#x2F;5&#x2F;12 12:58  * @description: 数组实现栈  *&#x2F; public class ArrayStack&lt;T&gt; &amp;#123;      &#x2F;**      * Desc:栈的底层实现数组      * @author yuanwenjie      * @date 2021&#x2F;5&#x2F;12 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组实现栈">
 <meta property="og:url" content="https://bip-wenjie.github.io/2021/05/12/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E6%A0%88/index.html">
 <meta property="og:site_name" content="袁文杰的博客">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:description" content="&#x2F;**  * @author: yuanwenjie  * @date: 2021&#x2F;5&#x2F;12 12:58  * @description: 数组实现栈  *&#x2F; public class ArrayStack&lt;T&gt; &amp;#123;      &#x2F;**      * Desc:栈的底层实现数组      * @author yuanwenjie      * @date 2021&#x2F;5&#x2F;12 1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-12T13:34:04.743Z">
+<meta property="article:modified_time" content="2021-05-19T03:45:40.317Z">
 <meta property="article:author" content="袁文杰">
 <meta name="twitter:card" content="summary">
   
@@ -272,7 +272,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">622字</span>
+      <span class="post-count">621字</span>
     </span>
   </span>
 
@@ -292,7 +292,195 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: yuanwenjie</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2021/5/12 12:58</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 数组实现栈</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayStack</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:栈的底层实现数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 15:44</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> T[] arrStack;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:指向栈顶上一个元素的指针</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:37</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> top;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:指向栈底的指针</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:38</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> down;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:栈的长度</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:23</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> length;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:使用无参构造时用的默认数组长度</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 18:25</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULTLENGTH = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:无参构造，数组使用默认长度20</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 18:24</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArrayStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        arrStack = (T[])<span class="keyword">new</span> Object[DEFAULTLENGTH];</span><br><span class="line">        length = DEFAULTLENGTH;</span><br><span class="line">        top = <span class="number">0</span>;</span><br><span class="line">        down = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:构造方法</span></span><br><span class="line"><span class="comment">    [len] 底层数组的大小</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:24</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArrayStack</span><span class="params">(<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">        arrStack = (T[])<span class="keyword">new</span> Object[len];</span><br><span class="line">        length = len;</span><br><span class="line">        top = <span class="number">0</span>;</span><br><span class="line">        down = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:入栈方法</span></span><br><span class="line"><span class="comment">    [n] 入栈元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> void</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 15:45</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(isFull()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">&quot;栈满，无法入栈&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        arrStack[top++] = t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:判断栈是否满</span></span><br><span class="line"><span class="comment">    []</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> boolean：true表示栈满，false表示栈未满</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:41</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> top - down == length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:判断栈是否空</span></span><br><span class="line"><span class="comment">    []</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> boolean：true表示栈空，false表示栈不为空</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:46</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> top == down;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:出栈方法</span></span><br><span class="line"><span class="comment">    []</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> T：表示出栈的元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:48</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arrStack[--top];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:查看栈顶元素的方法</span></span><br><span class="line"><span class="comment">    []</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> T：返回栈顶元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 16:53</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> arrStack[top - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Desc:十进制转二进制、八进制、十六进制的方法</span></span><br><span class="line"><span class="comment">    [target, sys] target：被转换的十进制数；sys：需要转换的进制</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> java.lang.String：返回值为字符串形式的二进制数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> yuanwenjie</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 2021/5/12 18:27</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sysConvert</span><span class="params">(<span class="keyword">int</span> target,<span class="keyword">int</span> sys)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(sys == <span class="number">2</span> || sys == <span class="number">8</span> || sys == <span class="number">16</span>)&#123;</span><br><span class="line">            ArrayStack&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayStack&lt;&gt;();</span><br><span class="line">            String res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">while</span>(target / sys != <span class="number">0</span>) &#123;</span><br><span class="line">                stack.push(target % sys);</span><br><span class="line">                target = target / sys;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(target);</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = stack.pop();</span><br><span class="line">                <span class="keyword">char</span> temp1 = <span class="string">&#x27;G&#x27;</span>;</span><br><span class="line">                <span class="keyword">switch</span> (temp) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">                        temp1 = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                        temp1 = <span class="string">&#x27;B&#x27;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                        temp1 = <span class="string">&#x27;C&#x27;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">13</span>:</span><br><span class="line">                        temp1 = <span class="string">&#x27;D&#x27;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">14</span>:</span><br><span class="line">                        temp1 = <span class="string">&#x27;E&#x27;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">15</span>:</span><br><span class="line">                        temp1 = <span class="string">&#x27;F&#x27;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(temp1 == <span class="string">&#x27;G&#x27;</span>)&#123;</span><br><span class="line">                    res = res + temp;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    res = res + temp1;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">&quot;参数有误&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayStack&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayStack();</span><br><span class="line">        String res = stack.sysConvert(<span class="number">1034</span>,<span class="number">16</span>);</span><br><span class="line">        System.out.println(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <pre><code class="java">/**
+ * @author: yuanwenjie
+ * @date: 2021/5/12 12:58
+ * @description: 数组实现栈
+ */
+public class ArrayStack&lt;T&gt; &#123;
+
+    /**
+     * Desc:栈的底层实现数组
+     * @author yuanwenjie
+     * @date 2021/5/12 15:44
+     */
+    private T[] arrStack;
+
+    /**
+     * Desc:指向栈顶上一个元素的指针
+     * @author yuanwenjie
+     * @date 2021/5/12 16:37
+     */
+    private int top;
+
+    /**
+     * Desc:指向栈底的指针
+     * @author yuanwenjie
+     * @date 2021/5/12 16:38
+     */
+    private int down;
+
+    /**
+     * Desc:栈的长度
+     * @author yuanwenjie
+     * @date 2021/5/12 16:23
+     */
+    private int length;
+
+    /**
+     * Desc:使用无参构造时用的默认数组长度
+     * @author yuanwenjie
+     * @date 2021/5/12 18:25
+     */
+    private static final int DEFAULTLENGTH = 20;
+
+    /**
+     * Desc:无参构造，数组使用默认长度20
+     * @author yuanwenjie
+     * @date 2021/5/12 18:24
+     */
+    public ArrayStack() &#123;
+        arrStack = (T[])new Object[DEFAULTLENGTH];
+        length = DEFAULTLENGTH;
+        top = 0;
+        down = 0;
+    &#125;
+
+    /**
+     * Desc:构造方法
+    [len] 底层数组的大小
+     * @author yuanwenjie
+     * @date 2021/5/12 16:24
+     */
+    public ArrayStack(int len)&#123;
+        arrStack = (T[])new Object[len];
+        length = len;
+        top = 0;
+        down = 0;
+    &#125;
+
+    /**
+     * Desc:入栈方法
+    [n] 入栈元素
+     * @return void
+     * @author yuanwenjie
+     * @date 2021/5/12 15:45
+     */
+    public void push(T t) &#123;
+        if(isFull()) &#123;
+            throw new RuntimeException(&quot;栈满，无法入栈&quot;);
+        &#125;
+        arrStack[top++] = t;
+    &#125;
+
+    /**
+     * Desc:判断栈是否满
+    []
+     * @return boolean：true表示栈满，false表示栈未满
+     * @author yuanwenjie
+     * @date 2021/5/12 16:41
+     */
+    public boolean isFull() &#123;
+        return top - down == length;
+    &#125;
+
+    /**
+     * Desc:判断栈是否空
+    []
+     * @return boolean：true表示栈空，false表示栈不为空
+     * @author yuanwenjie
+     * @date 2021/5/12 16:46
+     */
+    public boolean isEmpty() &#123;
+        return top == down;
+    &#125;
+
+    /**
+     * Desc:出栈方法
+    []
+     * @return T：表示出栈的元素
+     * @author yuanwenjie
+     * @date 2021/5/12 16:48
+     */
+    public T pop() &#123;
+        if(isEmpty()) &#123;
+            return null;
+        &#125;
+        return arrStack[--top];
+    &#125;
+
+    /**
+     * Desc:查看栈顶元素的方法
+    []
+     * @return T：返回栈顶元素
+     * @author yuanwenjie
+     * @date 2021/5/12 16:53
+     */
+    public T peek() &#123;
+        return arrStack[top - 1];
+    &#125;
+
+    /**
+     * Desc:十进制转二进制、八进制、十六进制的方法
+    [target, sys] target：被转换的十进制数；sys：需要转换的进制
+     * @return java.lang.String：返回值为字符串形式的二进制数
+     * @author yuanwenjie
+     * @date 2021/5/12 18:27
+     */
+    public String sysConvert(int target,int sys) &#123;
+        if(sys == 2 || sys == 8 || sys == 16)&#123;
+            ArrayStack&lt;Integer&gt; stack = new ArrayStack&lt;&gt;();
+            String res = &quot;&quot;;
+            while(target / sys != 0) &#123;
+                stack.push(target % sys);
+                target = target / sys;
+            &#125;
+            stack.push(target);
+            while (!stack.isEmpty()) &#123;
+                int temp = stack.pop();
+                char temp1 = &#39;G&#39;;
+                switch (temp) &#123;
+                    case 10:
+                        temp1 = &#39;A&#39;;
+                        break;
+                    case 11:
+                        temp1 = &#39;B&#39;;
+                        break;
+                    case 12:
+                        temp1 = &#39;C&#39;;
+                        break;
+                    case 13:
+                        temp1 = &#39;D&#39;;
+                        break;
+                    case 14:
+                        temp1 = &#39;E&#39;;
+                        break;
+                    case 15:
+                        temp1 = &#39;F&#39;;
+                        break;
+                &#125;
+                if(temp1 == &#39;G&#39;)&#123;
+                    res = res + temp;
+                &#125;else &#123;
+                    res = res + temp1;
+                &#125;
+
+            &#125;
+            return res;
+        &#125;else &#123;
+            throw new RuntimeException(&quot;参数有误&quot;);
+        &#125;
+    &#125;
+
+    public static void main(String[] args) &#123;
+        ArrayStack&lt;Integer&gt; stack = new ArrayStack();
+        String res = stack.sysConvert(1034,16);
+        System.out.println(res);
+    &#125;
+&#125;
+
+</code></pre>
+
     
 
     
@@ -419,6 +607,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/bip-wenjie.github.io/2021/05/14/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数组实现队列
+        
+      </div>
+    </a>
   
   
     <a href="/bip-wenjie.github.io/2021/05/11/%E6%95%B0%E7%BB%84%EF%BC%9A%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" id="article-nav-older" class="article-nav-link-wrap">
